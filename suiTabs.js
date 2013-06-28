@@ -38,7 +38,7 @@
             easing : "swing",
             move : 1,
             circle : true
-        }
+        };
 
         var settings = $.extend(defaults, opts);
 
@@ -47,6 +47,7 @@
         }
 
         var tabEle = $(settings.content),
+        $this,
         length = tabEle.length,
         current = settings.current,
         tabParent = tabEle.parent(),
@@ -60,6 +61,7 @@
         active = settings.active,
         index = 0,
         cloned,
+        triggerParent,
         autoslide,
         mouseOn,
         eventMap = (function(){
@@ -79,12 +81,12 @@
                     tabCon += "<li></li>";
                 }
             }
-            var triggerParent = $("<ul style='display:none;' class='tabCon'>" + tabCon + "</ul>");
-            var $this = triggerParent.children();
+            triggerParent = $("<ul style='display:none;' class='tabCon'>" + tabCon + "</ul>");
+            $this = triggerParent.children();
             tabParent.after(triggerParent);
         } else {
-            var $this = $(this);
-            var triggerParent = $this.parent();
+            $this = $(this);
+            triggerParent = $this.parent();
         }
 
 
@@ -284,13 +286,11 @@
         }
 
         function prevHandler(){
-            if (single
-                && (effect == "slide"||effect == "slideV")
-            && index<1) {
+            if (single && (effect == "slide"||effect == "slideV") && index<1) {
                 index = Math.ceil((length-single)/move)+1;
             }
 
-            if (index == 0){
+            if (index === 0){
                 circleHandler(true);
             }
 
@@ -298,9 +298,7 @@
         }
 
         function nextHandler(){
-            if (single
-                && (effect == "slide"||effect == "slideV")
-            && index*move >= length - single) {
+            if (single && (effect == "slide"||effect == "slideV") && index*move >= length - single) {
                 index = -1;
             } else if (index == length - 1) {
                 index = -1;
@@ -377,11 +375,11 @@
                 tabEle.not(":eq(" + index + ")").hide();
                 tabEle.eq(index).show();
             }
-        }
+        };
 
         init();
         return this;
 
-    }// end suiTabs
+    };// end suiTabs
 })(jQuery);
 
