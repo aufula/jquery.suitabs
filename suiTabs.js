@@ -15,6 +15,7 @@
 * @param {Boolean|Number} nav : value true means toggle-shown prev/next buttton,value 1 means they will be always shown
 * @param {Number} width : 470  tab width
 * @param {Number} height : 150 tab height
+* @param {Boolean} hoverStop : true Stop playing when mouse enter tab 
 * @param {Number} single: 0 elements counts in one group
 * @param {Number} move: 1  how much to be moved each time
 * @param {String} easing: ease-in | ease-out-in | etc. support easing plugin
@@ -33,6 +34,7 @@
             pause : 4000,
             nav : false,
             single : 0,
+            hoverStop : true,
             easing : "swing",
             move : 1,
             circle : true
@@ -164,7 +166,9 @@
             }
 
             if (settings.type == "auto"){
-                containerHoverHandler();
+                if(settings.hoverStop){
+                    containerHoverHandler();
+                }
                 initCarousel();
             }
 
@@ -225,7 +229,7 @@
             prevBtn.click(prevHandler);
             nextBtn.click(nextHandler);
 
-            if (settings.type == "auto") {
+            if (settings.type == "auto" && settings.hoverStop == true) {
                 var hoverHandler = function(e){
                     if(e.type == "mouseenter") {
                         clearInterval(autoslide);
