@@ -1,4 +1,3 @@
-
 ##Description
 
 jquery.suitabs 轮播图，tab插件,
@@ -8,7 +7,7 @@ jquery.suitabs 轮播图，tab插件,
 
 
 
-##parameters
+##Parameters
 
 * @param {Number} current : 0  the default shown tab
 * @param {String} type : click | hover | auto
