@@ -1,4 +1,4 @@
-jquery.suitabs 轮播图，tab插件,
+jquery.suitabs slideshow & tab
 
 
 #### [demo](http://aufula.github.io/jquery.suitabs)
