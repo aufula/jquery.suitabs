@@ -1,4 +1,4 @@
-jquery.suitabs slideshow & tab
+A jquery plugin of slideshow & tab
 
 
 #### [demo](http://aufula.github.io/jquery.suitabs)
