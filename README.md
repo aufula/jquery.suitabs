@@ -1,5 +1,3 @@
-##Description
-
 jquery.suitabs 轮播图，tab插件,
 
 
@@ -29,4 +27,4 @@ jquery.suitabs 轮播图，tab插件,
 
 ##License
 
-Always MIT
+MIT
