@@ -1,6 +1,6 @@
 /* Plugin: SuiTab.js
 * Version: 1.8
-* Author:Sean
+* Author: aufula
 * License: MIT
 *
 * @param {Number} current : 0  the default shown tab
